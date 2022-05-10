@@ -1,4 +1,5 @@
 import { gql, useMutation } from '@apollo/client';
+import SavedBooks from '../../client/src/pages/SavedBooks';
 
 // to add a new user
 export const ADD_USER= gql'
@@ -6,6 +7,17 @@ export const ADD_USER= gql'
     addUser(username: $username, email: $email, password: $password) {
         token
         user {
+            Id
+            username
+            email
+            SavedBooks {
+                
+            }
+        }
+    }
+}
+}
+`; 
 
 
 
@@ -19,3 +31,15 @@ export const ADD_USER= gql'
     login(email: $email, password: $password) {
         token
         user {    
+            Id
+            username
+            email
+            SavedBooks {
+
+
+            }
+        }
+    }
+}
+}
+`; 
